@@ -37,6 +37,25 @@ class DBService():
             data.append(data_dict)
 
         return data
+    
+
+    def update_geral_data(self, values, row_id):
+        
+        table_name = "dados_gerais"
+
+        connect_database = sqlite3.connect('app.db')
+        cursor = connect_database.cursor()
+        id = row_id
+
+        query = f"""
+            update {table_name}
+            set salario_bruto=?, salario_liquido=?
+            where id = {id}
+        """
+        cursor.execute(query,((values)))
+
+        connect_database.commit()
+        connect_database.close()
 
 
     def get_df_data(self, table_name):

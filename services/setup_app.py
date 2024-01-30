@@ -1,4 +1,4 @@
-from controller.db_service import DBService
+from services.db_service import DBService
 
 class Setup():
 
