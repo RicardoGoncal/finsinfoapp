@@ -1,5 +1,5 @@
-from controller.setup_app import Setup
-from controller.db_service import DBService
+from services.setup_app import Setup
+from services.db_service import DBService
 
 
 db = DBService()
